@@ -3,6 +3,28 @@ server:
 spring:
   application:
     name: admin-server
+  mail:
+    host: smtp.qq.com
+    username: 1348581692@qq.com
+    password: qrlvkdyooknkfhcb
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    port: 587
+  boot:
+    admin:
+      notify:
+        mail:
+          from: 1348581692@qq.com
+          to: 1067064019@qq.com
+  security:
+    user:
+      name: "root"
+      password: "1qa2ws3ed"
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
@@ -19,3 +41,9 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+turbine:
+  #  aggregator:
+  #    clusterConfig: default
+  appConfig: trade-done,trade-gateway,pos
+  clusterNameExpression:  "'default'"
+#  http://localhost:13000/turbine.stream 其它
